@@ -1,0 +1,29 @@
+{
+  "name": "EmerGence",
+  "version": "1.0.0",
+  "description": "A Disaster Relief APP",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1",
+    "minify": "uglifyjs public/src/js/app.js -o public/src/js/app.min.js --compress --mangle && uglifyjs public/src/js/feed.js -o public/src/js/feed.min.js --compress --mangle && uglifyjs public/src/js/fetch.js -o public/src/js/fetch.min.js --compress --mangle && uglifyjs public/src/js/idb.js -o public/src/js/idb.min.js --compress --mangle && uglifyjs public/src/js/promise.js -o public/src/js/promise.min.js --compress --mangle && uglifyjs public/src/js/utility.js -o public/src/js/utility.min.js --compress --mangle",
+    "generate-sw": "workbox inject:manifest",
+    "build": "npm run minify && npm run generate-sw"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app",
+    "complete",
+    "tutorial"
+  ],
+  "author": "U Paul",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "workbox-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "uglify-es": "^3.3.9"
+  }
+}
